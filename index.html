@@ -1,12 +1,146 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#073b9a"><title>RAJASHEELA FOUNDATION</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="header"><a class="brand" href="#top"><img src="logo.png" alt="Rajasheela Foundation logo" class="logo"><span class="brand-name">RAJASHEELA FOUNDATION<small>Reg No. 552</small></span></a><nav><a href="#about">About Us</a><a href="#application">Apply</a><a href="#contact">Contact Us</a></nav></header>
-<main id="top"><section class="hero blur-in"><div><p class="eyebrow">RAJASHEELA FOUNDATION <small>Reg No. 552</small></p><h1>Celebrating Excellence.<br>Rewarding Dedication.</h1><p>Recognizing dedication, hard work and outstanding contributions across professions and education.</p><a class="button" href="#application">Apply Now</a></div><img src="logo.png" alt="Rajasheela Foundation emblem" class="hero-logo"></section>
-<section class="section blur-in" id="about"><p class="kicker">ABOUT US</p><h2>About Us</h2><p>At Rajasheela Foundation, we believe that dedication, hard work, and excellence deserve to be celebrated. Every day, countless employees and students go above and beyond in their respective fields, yet their efforts often go unnoticed. Our mission is to change that by actively identifying, recognizing, and rewarding top performers across all departments and categories.</p>
-<h3>What We Do</h3><ul><li><b>Cross-Sector Employee Recognition:</b> We spotlight outstanding professionals across diverse sectors—from essential public services like railways and education to corporate, healthcare, and community-driven roles—honoring their commitment and service.</li><li><b>Student Excellence Awards:</b> We encourage academic brilliance, innovation, and perseverance by rewarding deserving students across various disciplines, inspiring the next generation of leaders.</li><li><b>Inclusive Categories:</b> Excellence isn't limited to a single field. Our recognition programs span all departments and categories, ensuring that quiet achievers, frontline workers, educators, and young talents all get the appreciation they earn.</li></ul>
-<h3>Our Vision</h3><p>To build a culture of appreciation where hard work is valued, talent is nurtured, and every achiever feels motivated to reach greater heights. When we uplift those who give their best, entire communities grow stronger.</p><div class="tagline">Celebrating Excellence. Rewarding Dedication.</div></section>
-<section class="section blur-in" id="application"><h2>CANDIDATE DETAILS</h2><p>Complete all required fields.</p><form id="applicationForm"><div class="grid">
-<label class="wide">FULL name *<input name="fullName" required maxlength="120" placeholder="Enter full name"></label><label>Father's name *<input name="fatherName" required></label><label>Age *<input name="age" type="number" min="1" max="120" required></label>
-<label>Current occupation *<select name="occupation" required><option value="">Select occupation</option><option>Government</option><option>Private</option><option>Self-employed</option><option>Other</option></select></label><label>Village *<input name="village" required></label><label>Mandal *<input name="mandal" required></label><label>District *<input name="district" required></label><label>Mobile number *<input name="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required></label><label>Gmail address *<input name="email" type="email" required></label><label class="wide">Details of services and contributions *<textarea name="serviceDetails" rows="5" required></textarea></label></div>
-<div class="upload"><h3>Supporting Documents</h3><p>Photocopies or scans only. PDF, JPG, JPEG or PNG; maximum 8 MB each.</p><label>Previous appreciation certificates, newspaper publications and photographs<input name="proofDocuments" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple></label><label>Two passport-size photographs *<input name="passportPhotos" type="file" accept=".jpg,.jpeg,.png" multiple required><small>Select exactly two photographs.</small></label></div><label class="consent"><input type="checkbox" name="confirm" required> I confirm that the information provided is accurate.</label><button class="button submit" type="submit">Submit Application</button><p id="formMessage"></p></form></section>
-<section class="section blur-in" id="contact"><p class="kicker">CONTACT</p><h2>Contact Us</h2><p>For enquiries, please contact us:</p><div class="contacts"><a href="tel:9959711525">9959711525</a><a href="tel:9010661852">9010661852</a><a href="mailto:rajasheela108@gmail.com">rajasheela108@gmail.com</a></div></section></main>
-<footer><img src="logo.png" alt=""><b>RAJASHEELA FOUNDATION</b><small>Reg No. 552</small></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073b9a">
+  <title>RAJASHEELA FOUNDATION</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#top">
+      <img src="logo.png" alt="Rajasheela Foundation logo" class="logo">
+      <span class="brand-name">RAJASHEELA FOUNDATION<small>Reg No. 552</small></span>
+    </a>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#application">Apply</a>
+      <a href="#payment">Payment</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero blur-in">
+      <div>
+        <p class="eyebrow">RAJASHEELA FOUNDATION <small>Reg No. 552</small></p>
+        <h1>Celebrating Excellence.<br>Rewarding Dedication.</h1>
+        <p>Recognizing dedication, hard work and outstanding contributions across professions and education.</p>
+        <a class="button" href="#application">Apply Now</a>
+      </div>
+      <img src="logo.png" alt="Rajasheela Foundation emblem" class="hero-logo">
+    </section>
+
+    <section class="section blur-in" id="about">
+      <p class="kicker">ABOUT US</p>
+      <h2>Who We Are</h2>
+      <p><strong>Rajasheela Foundation</strong> identifies, honors, and rewards top-performing employees and deserving students across all departments and categories.</p>
+      <ul class="compact-list">
+        <li><b>Employee Excellence:</b> Honoring dedicated professionals across railways, education, healthcare, corporate, and public service.</li>
+        <li><b>Student Awards:</b> Supporting academic merit, innovation, and perseverance across all disciplines.</li>
+        <li><b>All Categories:</b> Ensuring frontline workers, educators, and young achievers receive the recognition they earn.</li>
+      </ul>
+      <div class="tagline">Our Vision: Uplifting communities by celebrating hard work and inspiring tomorrow’s leaders.</div>
+    </section>
+
+    <section class="section blur-in" id="application">
+      <h2>CANDIDATE DETAILS</h2>
+      <p>Complete all required fields.</p>
+      <form id="applicationForm">
+        <div class="grid">
+          <label class="wide">FULL name *<input name="fullName" required maxlength="120" placeholder="Enter full name"></label>
+          <label>Father's name *<input name="fatherName" required></label>
+          <label>Age *<input name="age" type="number" min="1" max="120" required></label>
+          <label>Current occupation *
+            <select name="occupation" required>
+              <option value="">Select occupation</option>
+              <option>Government</option>
+              <option>Private</option>
+              <option>Self-employed</option>
+              <option>Student</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Village *<input name="village" required></label>
+          <label>Mandal *<input name="mandal" required></label>
+          <label>District *<input name="district" required></label>
+          <label>Mobile number *<input name="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required></label>
+          <label>Gmail address *<input name="email" type="email" required></label>
+          <label class="wide">Details of services and contributions *<textarea name="serviceDetails" rows="4" required></textarea></label>
+        </div>
+
+        <div class="upload">
+          <h3>Supporting Documents</h3>
+          <p>Photocopies or scans only. PDF, JPG, JPEG or PNG; maximum 8 MB each.</p>
+          <label>Previous appreciation certificates, newspaper publications and photographs<input name="proofDocuments" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple></label>
+          <label>Two passport-size photographs *<input name="passportPhotos" type="file" accept=".jpg,.jpeg,.png" multiple required><small>Select exactly two photographs.</small></label>
+        </div>
+
+        <label class="consent"><input type="checkbox" name="confirm" required> I confirm that the information provided is accurate.</label>
+        <button class="button submit" type="submit">Submit Application</button>
+        <p id="formMessage"></p>
+      </form>
+    </section>
+
+    <section class="section blur-in" id="payment">
+      <p class="kicker">CONTRIBUTION & REGISTRATION</p>
+      <h2>Select Payment Amount</h2>
+      <p>Choose an amount below to automatically update the UPI QR code or pay directly via PhonePe / Google Pay.</p>
+
+      <div class="amount-grid" role="group" aria-label="Select payment amount">
+        <button type="button" class="amt-btn active" data-amount="2500">₹2,500</button>
+        <button type="button" class="amt-btn" data-amount="3000">₹3,000</button>
+        <button type="button" class="amt-btn" data-amount="4500">₹4,500</button>
+        <button type="button" class="amt-btn" data-amount="5000">₹5,000</button>
+      </div>
+
+      <div class="payment-box">
+        <div class="qr-card">
+          <div class="selected-badge">Paying: <strong id="displayAmount">₹2,500</strong></div>
+          <img id="upiQrImage" src="" alt="Dynamic UPI Payment QR Code" class="qr-img">
+          <p class="upi-id-text">UPI ID: <strong id="displayUpiId"></strong></p>
+          <small>Scan with PhonePe, GPay, Paytm, or any BHIM UPI app</small>
+        </div>
+
+        <div class="pay-actions">
+          <h3>Pay Directly on Mobile</h3>
+          <p>Tap your preferred app to open with <strong>₹<span id="btnAmountText">2500</span></strong> pre-filled:</p>
+          <div class="upi-apps">
+            <a id="phonepeLink" href="#" class="app-btn phonepe">Pay with PhonePe</a>
+            <a id="gpayLink" href="#" class="app-btn gpay">Pay with Google Pay</a>
+            <a id="genericUpiLink" href="#" class="app-btn any-upi">Open Any UPI App</a>
+          </div>
+
+          <div class="utr-box">
+            <label for="utrInput">Enter 12-Digit UTR / Transaction ID after payment *
+              <input id="utrInput" name="utrNumber" type="text" inputmode="numeric" pattern="[0-9]{12}" maxlength="12" placeholder="e.g., 432198765432">
+            </label>
+            <button type="button" id="confirmPaymentBtn" class="button submit" style="margin-top: 12px;">Confirm Payment Details</button>
+            <p id="paymentMessage" class="pay-msg"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blur-in" id="contact">
+      <p class="kicker">CONTACT</p>
+      <h2>Contact Us</h2>
+      <p>For enquiries, please contact us:</p>
+      <div class="contacts">
+        <a href="tel:9959711525">9959711525</a>
+        <a href="tel:9010661852">9010661852</a>
+        <a href="mailto:rajasheela108@gmail.com">rajasheela108@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="logo.png" alt="">
+    <b>RAJASHEELA FOUNDATION</b>
+    <small>Reg No. 552</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
