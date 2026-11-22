@@ -4,89 +4,125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#073b9a">
-  <title>RAJASHEELA FOUNDATION</title>
+  <title>Rajasheela Foundation | Reg No. 552</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
     <a class="brand" href="#top">
-      <img src="logo.png" alt="Rajasheela Foundation logo" class="logo">
-      <span class="brand-name">RAJASHEELA FOUNDATION<small>Reg No. 552</small></span>
+      <img src="logo.png" alt="Rajasheela Foundation Logo" class="logo">
+      <span class="brand-name">
+        RAJASHEELA FOUNDATION
+        <span class="reg-badge">Reg No. 552</span>
+      </span>
     </a>
     <nav>
       <a href="#about">About Us</a>
-      <a href="#application">Apply</a>
+      <a href="#application">Apply Now</a>
       <a href="#payment">Payment</a>
       <a href="#contact">Contact Us</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero blur-in">
+    <section class="hero reveal-blur">
       <div>
-        <p class="eyebrow">RAJASHEELA FOUNDATION <small>Reg No. 552</small></p>
+        <div class="hero-eyebrow">
+          <span>RAJASHEELA FOUNDATION</span>
+          <span class="reg-pill">Reg No. 552</span>
+        </div>
         <h1>Celebrating Excellence.<br>Rewarding Dedication.</h1>
-        <p>Recognizing dedication, hard work and outstanding contributions across professions and education.</p>
+        <p>Recognizing dedication, hard work, and outstanding contributions across professions and education.</p>
         <a class="button" href="#application">Apply Now</a>
       </div>
-      <img src="logo.png" alt="Rajasheela Foundation emblem" class="hero-logo">
+      <img src="logo.png" alt="Rajasheela Foundation Emblem" class="hero-logo">
     </section>
 
-    <section class="section blur-in" id="about">
+    <section class="section reveal-blur" id="about">
       <p class="kicker">ABOUT US</p>
       <h2>Who We Are</h2>
       <p><strong>Rajasheela Foundation</strong> identifies, honors, and rewards top-performing employees and deserving students across all departments and categories.</p>
       <ul class="compact-list">
-        <li><b>Employee Excellence:</b> Honoring dedicated professionals across railways, education, healthcare, corporate, and public service.</li>
-        <li><b>Student Awards:</b> Supporting academic merit, innovation, and perseverance across all disciplines.</li>
-        <li><b>All Categories:</b> Ensuring frontline workers, educators, and young achievers receive the recognition they earn.</li>
+        <li><strong>Employee Excellence:</strong> Honoring dedicated professionals across railways, education, healthcare, corporate, and public service.</li>
+        <li><strong>Student Awards:</strong> Supporting academic merit, innovation, and perseverance across all disciplines.</li>
+        <li><strong>All Categories:</strong> Ensuring frontline workers, educators, and young achievers receive the recognition they earn.</li>
       </ul>
-      <div class="tagline">Our Vision: Uplifting communities by celebrating hard work and inspiring tomorrow’s leaders.</div>
+      <div class="vision-box">
+        <span class="vision-label">OUR VISION</span>
+        <p class="vision-text">Uplifting communities by celebrating extraordinary dedication and hard work,<br>while inspiring a new generation of leaders across every sector.</p>
+      </div>
     </section>
 
-    <section class="section blur-in" id="application">
-      <h2>CANDIDATE DETAILS</h2>
-      <p>Complete all required fields.</p>
+    <section class="section reveal-blur" id="application">
+      <p class="kicker">NOMINATION &amp; APPLICATION</p>
+      <h2>Candidate Details</h2>
+      <p>Complete all required fields accurately. Fields marked with * are mandatory.</p>
       <form id="applicationForm">
         <div class="grid">
-          <label class="wide">FULL name *<input name="fullName" required maxlength="120" placeholder="Enter full name"></label>
-          <label>Father's name *<input name="fatherName" required></label>
-          <label>Age *<input name="age" type="number" min="1" max="120" required></label>
-          <label>Current occupation *
+          <label class="wide">Full Name *
+            <input name="fullName" required maxlength="120" placeholder="e.g., Rajesh Kumar Sharma">
+          </label>
+          <label>Father's Name *
+            <input name="fatherName" required placeholder="e.g., Venkata Narayana Sharma">
+          </label>
+          <label>Age *
+            <input name="age" type="number" min="1" max="120" required placeholder="e.g., 34">
+          </label>
+          <label>Current Occupation *
             <select name="occupation" required>
-              <option value="">Select occupation</option>
+              <option value="">Select occupation category</option>
               <option>Government</option>
               <option>Private</option>
-              <option>Self-employed</option>
+              <option>Self-Employed</option>
               <option>Student</option>
               <option>Other</option>
             </select>
           </label>
-          <label>Village *<input name="village" required></label>
-          <label>Mandal *<input name="mandal" required></label>
-          <label>District *<input name="district" required></label>
-          <label>Mobile number *<input name="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required></label>
-          <label>Gmail address *<input name="email" type="email" required></label>
-          <label class="wide">Details of services and contributions *<textarea name="serviceDetails" rows="4" required></textarea></label>
+          <label>Village / Town *
+            <input name="village" required placeholder="e.g., Kazipet">
+          </label>
+          <label>Mandal *
+            <input name="mandal" required placeholder="e.g., Hanamkonda">
+          </label>
+          <label>District *
+            <input name="district" required placeholder="e.g., Warangal">
+          </label>
+          <label>Mobile Number *
+            <input name="mobile" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required placeholder="e.g., 9876543210">
+          </label>
+          <label>Email Address *
+            <input name="email" type="email" required placeholder="e.g., rajesh.sharma@gmail.com">
+          </label>
+          <label class="wide">Details of Services and Contributions *
+            <textarea name="serviceDetails" rows="4" required placeholder="e.g., 12 years of dedicated service in Indian Railways; awarded Best Station Master in 2024 for zero-accident track record..."></textarea>
+          </label>
         </div>
 
         <div class="upload">
           <h3>Supporting Documents</h3>
-          <p>Photocopies or scans only. PDF, JPG, JPEG or PNG; maximum 8 MB each.</p>
-          <label>Previous appreciation certificates, newspaper publications and photographs<input name="proofDocuments" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple></label>
-          <label>Two passport-size photographs *<input name="passportPhotos" type="file" accept=".jpg,.jpeg,.png" multiple required><small>Select exactly two photographs.</small></label>
+          <p>Photocopies or clear scans only. Accepted formats: PDF, JPG, JPEG, or PNG (maximum 8 MB each).</p>
+          <label>Previous Appreciation Certificates, Newspaper Publications &amp; Photographs
+            <input name="proofDocuments" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple>
+          </label>
+          <label>Two Passport-Size Photographs *
+            <input name="passportPhotos" type="file" accept=".jpg,.jpeg,.png" multiple required>
+            <small>Select exactly two recent passport-size photographs (e.g., photo1.jpg, photo2.jpg).</small>
+          </label>
         </div>
 
-        <label class="consent"><input type="checkbox" name="confirm" required> I confirm that the information provided is accurate.</label>
-        <button class="button submit" type="submit">Submit Application</button>
-        <p id="formMessage"></p>
+        <label class="consent">
+          <input type="checkbox" name="confirm" required>
+          <span>I confirm that the information and documents provided above are true and accurate.</span>
+        </label>
+        <button class="button submit" type="submit">Submit Candidate Details</button>
+        <p id="formMessage" class="status-msg"></p>
       </form>
     </section>
 
-    <section class="section blur-in" id="payment">
-      <p class="kicker">CONTRIBUTION & REGISTRATION</p>
+    <section class="section reveal-blur" id="payment">
+      <p class="kicker">CONTRIBUTION &amp; REGISTRATION</p>
       <h2>Select Payment Amount</h2>
-      <p>Choose an amount below to automatically update the UPI QR code or pay directly via PhonePe / Google Pay.</p>
+      <p>Choose an amount below to automatically update the UPI QR code or tap PhonePe / Google Pay to pay directly.</p>
 
       <div class="amount-grid" role="group" aria-label="Select payment amount">
         <button type="button" class="amt-btn active" data-amount="2500">₹2,500</button>
@@ -100,45 +136,101 @@
           <div class="selected-badge">Paying: <strong id="displayAmount">₹2,500</strong></div>
           <img id="upiQrImage" src="" alt="Dynamic UPI Payment QR Code" class="qr-img">
           <p class="upi-id-text">UPI ID: <strong id="displayUpiId"></strong></p>
-          <small>Scan with PhonePe, GPay, Paytm, or any BHIM UPI app</small>
+          <small>Scan with PhonePe, Google Pay, Paytm, or any BHIM UPI app</small>
         </div>
 
         <div class="pay-actions">
           <h3>Pay Directly on Mobile</h3>
-          <p>Tap your preferred app to open with <strong>₹<span id="btnAmountText">2500</span></strong> pre-filled:</p>
+          <p>Tap your preferred UPI app to launch with <strong>₹<span id="btnAmountText">2500</span></strong> pre-filled:</p>
           <div class="upi-apps">
-            <a id="phonepeLink" href="#" class="app-btn phonepe">Pay with PhonePe</a>
-            <a id="gpayLink" href="#" class="app-btn gpay">Pay with Google Pay</a>
-            <a id="genericUpiLink" href="#" class="app-btn any-upi">Open Any UPI App</a>
+            <a id="phonepeLink" href="#" class="app-btn phonepe" aria-label="Pay with PhonePe">
+              <svg class="app-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="#ffffff" fill-opacity="0.18"/>
+                <path d="M14.8 6.5H9.2C8.5 6.5 8 7 8 7.7V9.2H13.4C14.2 9.2 14.8 9.8 14.8 10.6C14.8 11.4 14.2 12 13.4 12H8V17.5H10.6V14.3H13.6C15.9 14.3 17.5 12.8 17.5 10.5C17.5 8.1 16.3 6.5 14.8 6.5Z" fill="#ffffff"/>
+              </svg>
+              <span>Pay with PhonePe</span>
+            </a>
+
+            <a id="gpayLink" href="#" class="app-btn gpay" aria-label="Pay with Google Pay">
+              <svg class="app-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="#ffffff"/>
+                <path d="M17.6 12.2C17.6 11.8 17.6 11.4 17.5 11H12V13.3H15.2C15.1 14 14.6 14.7 13.9 15.1V16.6H15.8C16.9 15.6 17.6 14 17.6 12.2Z" fill="#4285F4"/>
+                <path d="M12 18C13.6 18 14.9 17.5 15.8 16.6L13.9 15.1C13.4 15.5 12.8 15.7 12 15.7C10.5 15.7 9.2 14.7 8.7 13.3H6.8V14.8C7.7 16.7 9.7 18 12 18Z" fill="#34A853"/>
+                <path d="M8.7 13.3C8.6 12.9 8.5 12.5 8.5 12C8.5 11.5 8.6 11.1 8.7 10.7V9.2H6.8C6.3 10.1 6 11 6 12C6 13 6.3 13.9 6.8 14.8L8.7 13.3Z" fill="#FBBC05"/>
+                <path d="M12 8.3C12.9 8.3 13.6 8.6 14.2 9.2L15.9 7.5C14.9 6.6 13.6 6 12 6C9.7 6 7.7 7.3 6.8 9.2L8.7 10.7C9.2 9.3 10.5 8.3 12 8.3Z" fill="#EA4335"/>
+              </svg>
+              <span>Pay with GPay</span>
+            </a>
+
+            <a id="genericUpiLink" href="#" class="app-btn any-upi" aria-label="Open Any UPI App">
+              <svg class="app-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 17L17 7M17 7H9M17 7V15" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Any UPI App</span>
+            </a>
           </div>
 
-          <div class="utr-box">
-            <label for="utrInput">Enter 12-Digit UTR / Transaction ID after payment *
-              <input id="utrInput" name="utrNumber" type="text" inputmode="numeric" pattern="[0-9]{12}" maxlength="12" placeholder="e.g., 432198765432">
+          <div class="confirmation-card">
+            <h4>Payment Confirmation</h4>
+            <p class="confirm-hint">Provide <strong>either</strong> your 12-digit UTR / Transaction ID <strong>or</strong> upload a screenshot of your completed payment.</p>
+
+            <label for="utrInput">Option 1: 12-Digit UTR / Reference Number
+              <input id="utrInput" name="utrNumber" type="text" inputmode="numeric" maxlength="12" placeholder="e.g., 432198765432">
             </label>
-            <button type="button" id="confirmPaymentBtn" class="button submit" style="margin-top: 12px;">Confirm Payment Details</button>
+
+            <div class="or-divider"><span>OR</span></div>
+
+            <label for="screenshotInput">Option 2: Upload Payment Screenshot (JPG, PNG, WEBP)
+              <input id="screenshotInput" name="paymentScreenshot" type="file" accept=".jpg,.jpeg,.png,.webp">
+            </label>
+
+            <div id="screenshotPreviewBox" class="preview-box" hidden>
+              <img id="screenshotPreviewImg" src="" alt="Payment Screenshot Preview">
+              <button type="button" id="removeScreenshotBtn" class="remove-btn">Remove Image</button>
+            </div>
+
+            <button type="button" id="confirmPaymentBtn" class="button submit" style="margin-top: 16px; width: 100%;">Submit Payment Confirmation</button>
             <p id="paymentMessage" class="pay-msg"></p>
           </div>
         </div>
       </div>
+
+      <!-- Payment Confirmation Receipt View -->
+      <div id="confirmationReceipt" class="receipt-card" hidden>
+        <div class="receipt-header">
+          <div>
+            <span class="receipt-status">&#10003; PAYMENT CONFIRMATION RECEIVED</span>
+            <h3>Rajasheela Foundation <span class="reg-badge">Reg No. 552</span></h3>
+          </div>
+          <button type="button" onclick="window.print()" class="print-btn">Print / Save Receipt</button>
+        </div>
+        <div class="receipt-grid">
+          <div><small>Reference ID</small><strong id="recRefId">-</strong></div>
+          <div><small>Amount Paid</small><strong id="recAmount">-</strong></div>
+          <div><small>UTR Number</small><strong id="recUtr">-</strong></div>
+          <div><small>Screenshot Attached</small><strong id="recScreenshot">-</strong></div>
+          <div><small>Date &amp; Time</small><strong id="recDate">-</strong></div>
+          <div><small>Verification Status</small><strong class="pending-tag">Submitted for Verification</strong></div>
+        </div>
+      </div>
     </section>
 
-    <section class="section blur-in" id="contact">
+    <section class="section reveal-blur" id="contact">
       <p class="kicker">CONTACT</p>
       <h2>Contact Us</h2>
-      <p>For enquiries, please contact us:</p>
+      <p>For enquiries regarding nominations, awards, or payment verification, please contact us:</p>
       <div class="contacts">
-        <a href="tel:9959711525">9959711525</a>
-        <a href="tel:9010661852">9010661852</a>
-        <a href="mailto:rajasheela108@gmail.com">rajasheela108@gmail.com</a>
+        <a href="tel:9959711525">Phone: 9959711525</a>
+        <a href="tel:9010661852">Phone: 9010661852</a>
+        <a href="mailto:rajasheela108@gmail.com">Email: rajasheela108@gmail.com</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <img src="logo.png" alt="">
-    <b>RAJASHEELA FOUNDATION</b>
-    <small>Reg No. 552</small>
+    <img src="logo.png" alt="Rajasheela Foundation Logo">
+    <strong>RAJASHEELA FOUNDATION</strong>
+    <span class="reg-pill">Reg No. 552</span>
   </footer>
 
   <script src="script.js"></script>
