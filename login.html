@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | RAJASHEELA FOUNDATION (Reg No 552/26)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="sky-hero-bg min-h-screen flex flex-col justify-between text-slate-800 antialiased">
+
+  <!-- Top Left Header -->
+  <header class="glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 logo-ring shadow-md flex-shrink-0">
+          <img src="logo.png" alt="Rajasheela Foundation Logo" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base sm:text-xl font-extrabold tracking-tight text-sky-900 leading-tight">
+            RAJASHEELA FOUNDATION
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-sky-600 tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            Reg No 552/26
+          </span>
+        </div>
+      </a>
+      <a href="index.html" class="px-4 py-2 rounded-full bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-sm font-bold shadow-sm transition-all">
+        ← Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Standalone Login Card -->
+  <main class="flex-1 flex items-center justify-center px-4 py-12">
+    <div class="tile-card rounded-3xl max-w-md w-full p-7 sm:p-9 bg-white border-2 border-sky-200">
+      <div class="flex flex-col items-center text-center mb-6">
+        <div class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-sky-600 via-sky-400 to-amber-300 shadow-lg mb-4 overflow-hidden logo-float">
+          <img src="logo.png" alt="Rajasheela Foundation Reg No 552/26 Logo" class="w-full h-full object-cover rounded-full bg-white" />
+        </div>
+        <h1 class="text-2xl font-extrabold text-sky-950 tracking-tight">RAJASHEELA FOUNDATION</h1>
+        <p class="text-xs font-bold text-sky-600 tracking-wide mt-0.5">Reg No 552/26 • Official Portal Login</p>
+      </div>
+
+      <form id="standaloneLoginForm" class="space-y-4">
+        <div>
+          <label for="role" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Account Type</label>
+          <select id="role" name="role" class="rf-input">
+            <option value="Candidate Applicant">Candidate Applicant</option>
+            <option value="Executive Director / Admin">Executive Director (G. V. THILAKNADH)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="username" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">GMail or Phone Number <span class="text-rose-500">*</span></label>
+          <input type="text" id="username" name="username" required placeholder="e.g., rajasheela108@gmail.com" class="rf-input" />
+        </div>
+
+        <div>
+          <label for="password" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Password / Application ID <span class="text-rose-500">*</span></label>
+          <input type="password" id="password" name="password" required placeholder="Enter password" class="rf-input" />
+        </div>
+
+        <div id="standaloneStatus" class="hidden p-3 rounded-xl bg-sky-50 border border-sky-200 text-sky-900 text-xs leading-relaxed"></div>
+
+        <button type="submit"
+          class="w-full py-3.5 rounded-full bg-sky-600 hover:bg-sky-700 text-white font-extrabold text-sm shadow-lg shadow-sky-200 transition-all cursor-pointer">
+          Sign In
+        </button>
+      </form>
+
+      <div class="mt-6 pt-4 border-t border-sky-100 text-center text-xs text-slate-500">
+        Need help? Contact <strong>9959711525 / 9010661852</strong> or <strong>rajasheela108@gmail.com</strong>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-sky-950 text-sky-200 py-4 text-center text-xs">
+    © 2026 RAJASHEELA FOUNDATION (Reg No 552/26) • Executive Director: G. V. THILAKNADH
+  </footer>
+
+  <script>
+    document.getElementById('standaloneLoginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const role = document.getElementById('role').value;
+      const status = document.getElementById('standaloneStatus');
+      status.classList.remove('hidden');
+      status.innerHTML = `<strong>Welcome, ${user}!</strong> Signed in as <strong>${role}</strong>. Redirecting to main portal...`;
+      setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+    });
+  </script>
+</body>
+</html>

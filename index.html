@@ -1,74 +1,513 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0B1F3A">
-  <meta name="description" content="RAJASHEELA FOUNDATION Awards 2027 — applications are invited to recognize outstanding service to society.">
-  <title>RAJASHEELA FOUNDATION | Awards 2027</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAJASHEELA FOUNDATION | Reg No 552/26</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-<header class="site-header">
-  <a class="brand" href="#home" aria-label="Rajasheela Foundation home">
-    <img src="logo.png" alt="RAJASHEELA FOUNDATION logo" class="brand-logo">
-    <span class="brand-copy"><strong>RAJASHEELA FOUNDATION</strong><small>Reg No 552/26</small></span>
-  </a>
-  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-  <nav class="nav-links" aria-label="Main navigation"><a href="#about">About Us</a><a href="#notification">Notification</a><a href="#registration">Candidate Registration</a></nav>
-</header>
-<main id="home">
-  <section class="hero reveal">
-    <div class="hero-copy"><span class="eyebrow">RECOGNITION • SERVICE • EXCELLENCE</span><h1>Honouring those<br><em>who make a difference.</em></h1><p>Applications are invited for the RAJASHEELA FOUNDATION Awards 2027. Recognizing individuals and organizations for their outstanding contributions to society.</p><a class="primary-btn" href="#registration">Apply for the Awards <span>→</span></a></div>
-    <div class="hero-mark"><div class="halo"></div><img src="logo.png" alt="Rajasheela Foundation emblem"></div>
-    <div class="hero-bottom"><span>AWARDS 2027</span><span>LAST DATE: 30 DECEMBER 2026</span></div>
-  </section>
+<body class="bg-white text-slate-800 antialiased selection:bg-sky-200 selection:text-sky-900">
 
-  <section class="about-tile reveal" id="about"><div class="tile-label">01 / ABOUT US</div><div><h2>About Us</h2><p>RAJASHEELA FOUNDATION is committed to recognizing and honouring talented individuals and organizations whose dedication, achievements and service create a positive impact on society. Through the Foundation Awards, we aim to celebrate meaningful contributions across a wide range of fields and encourage others to serve with commitment and excellence.</p></div></section>
+  <!-- Top Left Fixed/Sticky Glassmorphic Header -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <!-- Top Left Brand & Circular Logo -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 sm:w-14 sm:h-14 logo-ring shadow-md flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+          <img src="logo.png" alt="Rajasheela Foundation Logo" />
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base sm:text-xl font-extrabold tracking-tight text-sky-900 leading-tight">
+            RAJASHEELA FOUNDATION
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-sky-600 tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+            Reg No 552/26
+          </span>
+        </div>
+      </a>
 
-  <section class="section reveal" id="notification">
-    <div class="section-heading"><span class="eyebrow blue">OFFICIAL ANNOUNCEMENT</span><h2>Applications Invited for the<br><em>RAJASHEELA FOUNDATION Awards</em></h2><p class="intro">The Rajasheela Foundation invites applications for its prestigious awards to recognize and honour talented individuals who have rendered outstanding services in various fields, including:</p></div>
-    <div class="category-grid">
-      <div class="category"><span class="category-icon" aria-hidden="true">🚆</span><span>Railways</span></div><div class="category"><span class="category-icon" aria-hidden="true">🚌</span><span>Road Transport</span></div><div class="category"><span class="category-icon" aria-hidden="true">🌾</span><span>Agriculture</span></div><div class="category"><span class="category-icon" aria-hidden="true">📰</span><span>Journalism</span></div><div class="category"><span class="category-icon" aria-hidden="true">🎭</span><span>Arts and Culture</span></div><div class="category"><span class="category-icon" aria-hidden="true">🤝</span><span>Social Service</span></div><div class="category"><span class="category-icon" aria-hidden="true">🏅</span><span>Sports</span></div><div class="category"><span class="category-icon" aria-hidden="true">⚕️</span><span>Medical and Healthcare</span></div><div class="category"><span class="category-icon" aria-hidden="true">🎓</span><span>Education</span></div><div class="category"><span class="category-icon" aria-hidden="true">🌱</span><span>Environment</span></div><div class="category"><span class="category-icon" aria-hidden="true">⚖️</span><span>Law and Justice</span></div><div class="category"><span class="category-icon" aria-hidden="true">🚫</span><span>Prohibition of Alcohol</span></div>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700">
+        <a href="#about" class="hover:text-sky-600 transition-colors">About Us</a>
+        <a href="#fields" class="hover:text-sky-600 transition-colors">Award Categories</a>
+        <a href="#notification" class="hover:text-sky-600 transition-colors">Notification</a>
+        <a href="#contact" class="hover:text-sky-600 transition-colors">Contact Us</a>
+        <button type="button" onclick="openLoginModal()" class="px-4 py-2 rounded-full border border-sky-300 bg-sky-50 hover:bg-sky-100 text-sky-800 font-bold transition-all cursor-pointer">
+          Login
+        </button>
+        <a href="#register" class="px-5 py-2.5 rounded-full bg-sky-600 text-white font-bold shadow-sm hover:bg-sky-700 transition-all">
+          Apply Now
+        </a>
+      </nav>
+
+      <!-- Mobile Action Buttons -->
+      <div class="flex md:hidden items-center gap-2">
+        <button type="button" onclick="openLoginModal()" class="px-3.5 py-2 rounded-full border border-sky-300 bg-sky-50 text-sky-800 text-xs font-bold">
+          Login
+        </button>
+        <a href="#register" class="px-4 py-2 rounded-full bg-sky-600 text-white text-xs font-bold shadow-sm hover:bg-sky-700">
+          Apply
+        </a>
+      </div>
     </div>
-    <div class="notice-card"><div class="notice-icon">✦</div><div><h3>Current Notification</h3><p>The awardees will be selected based on their outstanding contributions and services to society.</p><p>The selected candidates and organizations will be honoured during the <strong>2027 Sankranti Festival</strong>.</p><p>The award ceremony will include the presentation of an <strong>Award, Certificate of Appreciation, Shield, and Felicitation.</strong></p></div></div>
-    <p class="announcement">This was announced by <strong>G. V. THILAKNADH</strong>, Executive Director of Rajasheela Foundation.</p>
-    <div class="deadline"><div><small>APPLICATION DEADLINE</small><strong>30 December 2026</strong></div><a href="#registration">Register Now <span>→</span></a></div>
-  </section>
+  </header>
 
-  <section class="section registration-section reveal" id="registration">
-    <div class="section-heading"><span class="eyebrow blue">YOUR CONTRIBUTION MATTERS</span><h2>Candidate <em>Registration</em></h2><p class="intro">Interested candidates are requested to submit the following details before 30 December 2026.</p></div>
-    <form id="candidateForm">
-      <div class="form-grid">
-        <label>Full Name <span>*</span><input name="fullName" type="text" placeholder="Enter candidate's full name" required></label>
-        <label>Father's Name <span>*</span><input name="fatherName" type="text" placeholder="Enter father's name" required></label>
-        <label>Phone Number <span>*</span><input name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required></label>
-        <label>GMail <span>*</span><input name="email" type="email" placeholder="example@gmail.com" required></label>
-        <label>Age of the Candidate <span>*</span><input name="age" type="number" min="1" max="120" placeholder="Age in years" required></label>
-        <label>Current Occupation <span>*</span><input name="occupation" type="text" placeholder="Enter current occupation" required></label>
-        <label class="full">Details of Social Service Activities <span>*</span><textarea name="service" rows="5" placeholder="Describe your social service activities and contributions" required></textarea></label>
-        <label class="full">Previous Achievements<textarea name="achievements" rows="4" placeholder="Mention awards, recognitions and achievements"></textarea></label>
-        <label class="full">Full Address <span>*</span><textarea name="address" rows="3" placeholder="House number, village/town, mandal, district, state and PIN code" required></textarea></label>
+  <!-- Hero Section -->
+  <section class="sky-hero-bg relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-24 border-b border-sky-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Circular Logo Badge -->
+      <div class="scroll-blur inline-flex flex-col items-center mb-6">
+        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1.5 bg-gradient-to-b from-sky-500 via-sky-300 to-white shadow-xl logo-float">
+          <div class="w-full h-full rounded-full overflow-hidden bg-white border-2 border-sky-100">
+            <img src="logo.png" alt="Rajasheela Foundation Official Seal" class="w-full h-full object-cover rounded-full" />
+          </div>
+        </div>
+        <span class="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100/90 border border-sky-300 text-sky-800 text-xs sm:text-sm font-bold tracking-wide shadow-sm">
+          Official Award Notification • 2027 Sankranti Felicitation
+        </span>
       </div>
-      <label class="agree"><input type="checkbox" required><span>I confirm that the information provided above is true and accurate.</span></label>
-      <button class="primary-btn submit-btn" type="submit">Submit Application <span>→</span></button>
-      <div class="attachment-grid">
-        <label>Attach Supporting PDF 1 <span>(PDF only)</span><input name="attachment1" type="file" accept="application/pdf,.pdf"></label>
-        <label>Attach Supporting PDF 2 <span>(PDF only)</span><input name="attachment2" type="file" accept="application/pdf,.pdf"></label>
+
+      <h1 class="scroll-blur font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold text-sky-950 tracking-tight leading-tight max-w-4xl mx-auto">
+        Applications Invited for the <span class="text-sky-600">RAJASHEELA FOUNDATION</span> Awards
+      </h1>
+
+      <p class="scroll-blur mt-5 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Honouring dedicated individuals and organizations rendering exemplary service to society across 12 distinguished sectors.
+      </p>
+
+      <div class="scroll-blur mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#register" class="px-8 py-3.5 rounded-full bg-sky-600 hover:bg-sky-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-sky-200 transition-all">
+          Submit Candidate Registration
+        </a>
+        <button type="button" onclick="openLoginModal()" class="px-7 py-3.5 rounded-full bg-white hover:bg-sky-50 text-sky-800 border border-sky-200 font-bold text-sm sm:text-base transition-all cursor-pointer">
+          Portal Login
+        </button>
       </div>
-      <p class="form-note" id="formMessage" role="status">Please review your details before submitting.</p>
-    </form>
+
+      <!-- Deadline Banner -->
+      <div class="scroll-blur mt-10 inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-white/90 border border-sky-200 shadow-sm text-xs sm:text-sm font-semibold text-sky-900">
+        <span class="px-2.5 py-0.5 rounded-md bg-sky-600 text-white font-bold uppercase text-[11px]">Deadline</span>
+        <span>Last Date for Applications: <strong class="text-sky-700 underline decoration-sky-300">30 December 2026</strong></span>
+      </div>
+    </div>
   </section>
 
-  <section class="payment-section reveal" id="payment">
-    <div class="payment-copy"><span class="eyebrow blue">SAMPLE PAYMENT DISPLAY</span><h2>Sample QR <em>₹2,999</em></h2><p>This is a demonstration QR image for website preview only. It is not connected to a bank account or UPI ID and cannot be used to make a payment.</p><strong class="sample-warning">SAMPLE ONLY — NOT FOR PAYMENT</strong></div>
-    <div class="payment-qr-placeholder"><img src="sample-payment-qr.png" alt="Sample QR code marked not for payment"><strong>Sample Amount: ₹2,999</strong><small>Demo QR • Not a real payment QR</small></div>
+  <!-- About Us Tile Box Section -->
+  <section id="about" class="py-14 sm:py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="scroll-blur tile-card rounded-3xl p-6 sm:p-10 lg:p-12 bg-gradient-to-br from-white via-sky-50/60 to-sky-100/50 relative overflow-hidden">
+        <div class="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-sky-200/30 blur-2xl pointer-events-none"></div>
+
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-sky-500/20 border border-sky-300 flex-shrink-0 overflow-hidden shadow-md">
+            <img src="logo.png" alt="Rajasheela Foundation Emblem" class="w-full h-full object-cover rounded-full bg-white" />
+          </div>
+
+          <div class="text-center md:text-left">
+            <div class="inline-block px-3.5 py-1 rounded-lg bg-sky-600 text-white text-xs font-bold uppercase tracking-wider mb-3">
+              About Us
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-sky-950 mb-3">
+              RAJASHEELA FOUNDATION <span class="text-sky-600 text-lg sm:text-xl font-bold">(Reg No 552/26)</span>
+            </h2>
+            <p class="text-slate-700 text-base sm:text-lg leading-relaxed">
+              The <strong>Rajasheela Foundation</strong> invites applications for the prestigious <strong>Rajsheela Foundation Awards</strong> to recognize and honour talented individuals who have rendered outstanding services in various fields, inspiring social responsibility, civic excellence, and selfless service to humanity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="issued reveal"><div class="issued-line"></div><div><span class="eyebrow">ISSUED BY</span><h2>RAJASHEELA FOUNDATION</h2><p>Executive Director: <strong>G. V. THILAKNADH</strong></p><small>Reg No 552/26</small></div><img src="logo.png" alt="Foundation logo"></section>
+  <!-- 12 Award Fields Section -->
+  <section id="fields" class="py-14 sm:py-20 bg-sky-50/70 border-y border-sky-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="scroll-blur text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-sky-600">Recognition Categories</span>
+        <h2 class="mt-2 text-2xl sm:text-4xl font-extrabold text-sky-950">
+          Eligible Fields of Outstanding Service
+        </h2>
+        <p class="mt-3 text-slate-600 text-sm sm:text-base">
+          Nominations and applications are open for individuals and organizations excelling in the following 12 sectors:
+        </p>
+      </div>
 
-</main>
-<footer><div class="footer-brand"><img src="logo.png" alt=""><strong>RAJASHEELA FOUNDATION</strong></div><span>Reg No 552/26</span><span>© 2026 RAJASHEELA FOUNDATION. All rights reserved.</span><div class="footer-contact"><strong>Contact Us</strong> · <a href="tel:9959711525">9959711525</a> · <a href="tel:9010661852">9010661852</a> · <a href="mailto:rajasheela108@gmail.com">rajasheela108@gmail.com</a></div></footer>
-<script src="script.js"></script>
-</body></html>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">01</div>
+          <span class="font-bold text-slate-800">Railways</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">02</div>
+          <span class="font-bold text-slate-800">Road Transport</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">03</div>
+          <span class="font-bold text-slate-800">Agriculture</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">04</div>
+          <span class="font-bold text-slate-800">Journalism</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">05</div>
+          <span class="font-bold text-slate-800">Arts and Culture</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">06</div>
+          <span class="font-bold text-slate-800">Social Service</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">07</div>
+          <span class="font-bold text-slate-800">Sports</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">08</div>
+          <span class="font-bold text-slate-800">Medical and Healthcare</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">09</div>
+          <span class="font-bold text-slate-800">Education</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">10</div>
+          <span class="font-bold text-slate-800">Environment</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">11</div>
+          <span class="font-bold text-slate-800">Law and Justice</span>
+        </div>
+
+        <div class="scroll-blur tile-card rounded-2xl p-5 flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-extrabold text-sm flex-shrink-0">12</div>
+          <span class="font-bold text-slate-800">Prohibition of Alcohol</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Notification & Official Announcement -->
+  <section id="notification" class="py-14 sm:py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="scroll-blur tile-card rounded-3xl overflow-hidden border-2 border-sky-200">
+        <!-- Top Banner -->
+        <div class="bg-gradient-to-r from-sky-700 via-sky-600 to-sky-500 px-6 sm:px-10 py-6 text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider mb-1">
+              Official Bulletin
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold">Current Notification</h2>
+          </div>
+          <div class="bg-white/15 backdrop-blur-sm border border-white/30 rounded-2xl px-4 py-2.5 text-sm">
+            <span class="block text-sky-100 text-xs font-medium">Last Date for Applications</span>
+            <span class="font-extrabold text-white text-base">30 December 2026</span>
+          </div>
+        </div>
+
+        <!-- Notification Body -->
+        <div class="p-6 sm:p-10 space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="p-5 rounded-2xl bg-sky-50 border border-sky-100">
+              <div class="text-sky-600 font-extrabold text-sm uppercase tracking-wide mb-2">Selection Criteria</div>
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                The awardees will be selected based on their <strong>outstanding contributions and services to society</strong>.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-sky-50 border border-sky-100">
+              <div class="text-sky-600 font-extrabold text-sm uppercase tracking-wide mb-2">Award Ceremony</div>
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                The selected candidates and organizations will be honoured during the <strong>2027 Sankranti Festival</strong>.
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-sky-50 border border-sky-100">
+              <div class="text-sky-600 font-extrabold text-sm uppercase tracking-wide mb-2">Honours Presented</div>
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                Presentation of an <strong>Award, Certificate of Appreciation, Shield, and Felicitation</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-sky-50 to-white border-l-4 border-sky-600 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <p class="text-slate-700 text-sm sm:text-base">
+              This was announced by <strong class="text-sky-900">G. V. THILAKNADH</strong>, Executive Director of Rajasheela Foundation.
+              <br />
+              <span class="text-slate-600 text-sm">Interested candidates are requested to submit the required documents and details before <strong>30 December 2026</strong>.</span>
+            </p>
+          </div>
+
+          <!-- Issued By Signature Card -->
+          <div class="pt-4 border-t border-sky-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3.5">
+              <div class="w-14 h-14 rounded-full p-0.5 border border-sky-300 overflow-hidden bg-white shadow-sm">
+                <img src="logo.png" alt="Issued By Seal" class="w-full h-full object-cover rounded-full" />
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-sky-600">Issued by:</p>
+                <p class="text-base sm:text-lg font-extrabold text-sky-950">RAJASHEELA FOUNDATION</p>
+                <p class="text-sm font-bold text-slate-700">Executive Director: <span class="text-sky-700">G. V. THILAKNADH</span></p>
+              </div>
+            </div>
+            <span class="px-4 py-1.5 rounded-full bg-sky-100 text-sky-800 text-xs font-bold">
+              Reg No 552/26
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Candidate Registration Form Section -->
+  <section id="register" class="py-14 sm:py-20 bg-gradient-to-b from-sky-50 to-white border-t border-sky-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="scroll-blur text-center mb-10">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-sky-600">Official Application Portal</span>
+        <h2 class="mt-2 text-2xl sm:text-4xl font-extrabold text-sky-950">Candidate Registration</h2>
+        <p class="mt-2 text-slate-600 text-sm sm:text-base">
+          Complete all required fields accurately and submit before <strong>30 December 2026</strong>.
+        </p>
+      </div>
+
+      <form id="registrationForm" class="scroll-blur tile-card rounded-3xl p-6 sm:p-10 space-y-6 bg-white">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="fullName" class="block text-sm font-bold text-slate-700 mb-1.5">Full Name <span class="text-rose-500">*</span></label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Enter candidate's full name" class="rf-input" />
+          </div>
+
+          <div>
+            <label for="fatherName" class="block text-sm font-bold text-slate-700 mb-1.5">Father's Name <span class="text-rose-500">*</span></label>
+            <input type="text" id="fatherName" name="fatherName" required placeholder="Enter father's full name" class="rf-input" />
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-bold text-slate-700 mb-1.5">Phone Number <span class="text-rose-500">*</span></label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9+\s-]{10,15}" placeholder="e.g., 9959711525" class="rf-input" />
+          </div>
+
+          <div>
+            <label for="gmail" class="block text-sm font-bold text-slate-700 mb-1.5">GMail <span class="text-rose-500">*</span></label>
+            <input type="email" id="gmail" name="gmail" required placeholder="example@gmail.com" class="rf-input" />
+          </div>
+
+          <div>
+            <label for="age" class="block text-sm font-bold text-slate-700 mb-1.5">Age of the Candidate <span class="text-rose-500">*</span></label>
+            <input type="number" id="age" name="age" required min="12" max="110" placeholder="Enter age in years" class="rf-input" />
+          </div>
+
+          <div>
+            <label for="occupation" class="block text-sm font-bold text-slate-700 mb-1.5">Current Occupation <span class="text-rose-500">*</span></label>
+            <input type="text" id="occupation" name="occupation" required placeholder="e.g., Teacher, Doctor, Social Worker" class="rf-input" />
+          </div>
+        </div>
+
+        <div>
+          <label for="category" class="block text-sm font-bold text-slate-700 mb-1.5">Applying Category / Field <span class="text-rose-500">*</span></label>
+          <select id="category" name="category" required class="rf-input">
+            <option value="">-- Select Award Category --</option>
+            <option value="Railways">Railways</option>
+            <option value="Road Transport">Road Transport</option>
+            <option value="Agriculture">Agriculture</option>
+            <option value="Journalism">Journalism</option>
+            <option value="Arts and Culture">Arts and Culture</option>
+            <option value="Social Service">Social Service</option>
+            <option value="Sports">Sports</option>
+            <option value="Medical and Healthcare">Medical and Healthcare</option>
+            <option value="Education">Education</option>
+            <option value="Environment">Environment</option>
+            <option value="Law and Justice">Law and Justice</option>
+            <option value="Prohibition of Alcohol">Prohibition of Alcohol</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="socialService" class="block text-sm font-bold text-slate-700 mb-1.5">Details of Social Service Activities <span class="text-rose-500">*</span></label>
+          <textarea id="socialService" name="socialService" rows="3" required placeholder="Describe your social service initiatives, community impact, and duration of service..." class="rf-input"></textarea>
+        </div>
+
+        <div>
+          <label for="achievements" class="block text-sm font-bold text-slate-700 mb-1.5">Previous Achievements <span class="text-rose-500">*</span></label>
+          <textarea id="achievements" name="achievements" rows="3" required placeholder="List notable awards, recognitions, milestones, or supporting document details..." class="rf-input"></textarea>
+        </div>
+
+        <div>
+          <label for="address" class="block text-sm font-bold text-slate-700 mb-1.5">Full Address <span class="text-rose-500">*</span></label>
+          <textarea id="address" name="address" rows="2" required placeholder="House/Door No., Street, Village/Town, District, State, PIN Code" class="rf-input"></textarea>
+        </div>
+
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-slate-500">
+            By submitting, you confirm that all particulars and supporting credentials are authentic.
+          </p>
+          <button type="submit"
+            class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-sky-600 hover:bg-sky-700 text-white font-extrabold text-sm sm:text-base shadow-lg shadow-sky-200 transition-all cursor-pointer">
+            Submit Application
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Us & Footer -->
+  <footer id="contact" class="bg-sky-950 text-white pt-14 pb-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="scroll-blur grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-sky-800/80">
+        <!-- Brand Column -->
+        <div class="flex flex-col items-start">
+          <div class="flex items-center gap-3.5 mb-4">
+            <div class="w-14 h-14 rounded-full p-0.5 bg-sky-400 overflow-hidden">
+              <img src="logo.png" alt="Rajasheela Foundation Logo" class="w-full h-full object-cover rounded-full bg-white" />
+            </div>
+            <div>
+              <h3 class="font-extrabold text-lg tracking-tight text-white">RAJASHEELA FOUNDATION</h3>
+              <p class="text-sky-300 text-xs font-bold">Reg No 552/26</p>
+            </div>
+          </div>
+          <p class="text-sky-200/80 text-sm leading-relaxed">
+            Recognizing and honouring outstanding service to society. Issued by Executive Director <strong>G. V. THILAKNADH</strong>.
+          </p>
+        </div>
+
+        <!-- Contact Details Column -->
+        <div>
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-sky-300 mb-4">Contact Us</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-sky-900 flex items-center justify-center text-sky-300 font-bold">📞</span>
+              <div>
+                <span class="block text-xs text-sky-300">Phone Numbers</span>
+                <a href="tel:9959711525" class="font-bold text-white hover:text-sky-300">9959711525</a>,
+                <a href="tel:9010661852" class="font-bold text-white hover:text-sky-300">9010661852</a>
+              </div>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-sky-900 flex items-center justify-center text-sky-300 font-bold">✉️</span>
+              <div>
+                <span class="block text-xs text-sky-300">GMail</span>
+                <a href="mailto:rajasheela108@gmail.com" class="font-bold text-white hover:text-sky-300">rajasheela108@gmail.com</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Key Dates Column -->
+        <div>
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-sky-300 mb-4">Important Schedule</h4>
+          <div class="p-4 rounded-2xl bg-sky-900/70 border border-sky-800 space-y-2 text-sm">
+            <p><span class="text-sky-300">Application Deadline:</span> <strong class="text-white">30 December 2026</strong></p>
+            <p><span class="text-sky-300">Award Felicitation:</span> <strong class="text-white">2027 Sankranti Festival</strong></p>
+            <p><span class="text-sky-300">Executive Director:</span> <strong class="text-white">G. V. THILAKNADH</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-sky-300/80 gap-2">
+        <p>© 2026 RAJASHEELA FOUNDATION (Reg No 552/26). All Rights Reserved.</p>
+        <p>Honouring Excellence • 2027 Sankranti Awards</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Website Login Modal (with Official Logo) -->
+  <div id="loginModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border-2 border-sky-200 relative my-8">
+      <button type="button" onclick="closeLoginModal()" aria-label="Close Login Modal"
+        class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold flex items-center justify-center cursor-pointer">
+        ✕
+      </button>
+
+      <!-- Centered Circular Logo Emblem on Login Screen -->
+      <div class="flex flex-col items-center text-center mb-6">
+        <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-sky-600 via-sky-400 to-amber-300 shadow-lg mb-3 overflow-hidden">
+          <img src="logo.png" alt="Rajasheela Foundation Reg No 552/26 Logo" class="w-full h-full object-cover rounded-full bg-white" />
+        </div>
+        <h3 class="text-xl font-extrabold text-sky-950 tracking-tight">RAJASHEELA FOUNDATION</h3>
+        <span class="text-xs font-bold text-sky-600 tracking-wide">Reg No 552/26 • Portal Login</span>
+      </div>
+
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label for="loginRole" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Portal Role</label>
+          <select id="loginRole" name="loginRole" class="rf-input">
+            <option value="Candidate Applicant">Candidate Applicant</option>
+            <option value="Executive Director / Admin">Executive Director / Admin</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="loginUser" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">GMail or Phone Number <span class="text-rose-500">*</span></label>
+          <input type="text" id="loginUser" name="loginUser" required placeholder="e.g., rajasheela108@gmail.com" class="rf-input" />
+        </div>
+
+        <div>
+          <label for="loginPassword" class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Password / Application ID <span class="text-rose-500">*</span></label>
+          <input type="password" id="loginPassword" name="loginPassword" required placeholder="Enter your password" class="rf-input" />
+        </div>
+
+        <div id="loginStatus" class="hidden p-3 rounded-xl border text-xs leading-relaxed"></div>
+
+        <button type="submit"
+          class="w-full py-3 rounded-full bg-sky-600 hover:bg-sky-700 text-white font-extrabold text-sm shadow-md shadow-sky-200 transition-all cursor-pointer">
+          Sign In to Portal
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Registration Confirmation & Printable Receipt Modal -->
+  <div id="receiptModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border-2 border-sky-200 relative my-8">
+      <div class="flex items-center justify-between border-b border-sky-100 pb-4 mb-5">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full overflow-hidden border border-sky-300">
+            <img src="logo.png" alt="Logo" class="w-full h-full object-cover rounded-full" />
+          </div>
+          <div>
+            <h3 class="font-extrabold text-sky-950 text-base sm:text-lg">RAJASHEELA FOUNDATION</h3>
+            <p class="text-xs font-bold text-sky-600">Reg No 552/26 • Application Slip</p>
+          </div>
+        </div>
+        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold">Recorded</span>
+      </div>
+
+      <div id="receiptContent" class="space-y-2.5 text-sm text-slate-700 bg-sky-50/60 p-5 rounded-2xl border border-sky-100">
+        <!-- Populated dynamically via script.js -->
+      </div>
+
+      <p class="mt-4 text-xs text-slate-500">
+        Please forward any supporting documents along with this acknowledgment to <strong>rajasheela108@gmail.com</strong> or contact <strong>9959711525 / 9010661852</strong> before <strong>30 December 2026</strong>.
+      </p>
+
+      <div class="mt-6 flex flex-wrap items-center justify-end gap-3 no-print">
+        <button type="button" onclick="window.print()" class="px-5 py-2.5 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-900 font-bold text-xs sm:text-sm cursor-pointer">
+          Print / Save PDF
+        </button>
+        <a id="emailForwardBtn" href="mailto:rajasheela108@gmail.com" class="px-5 py-2.5 rounded-full bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs sm:text-sm">
+          Send via GMail
+        </a>
+        <button type="button" onclick="closeModal()" class="px-5 py-2.5 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-xs sm:text-sm cursor-pointer">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
