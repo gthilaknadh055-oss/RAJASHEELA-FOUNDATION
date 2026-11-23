@@ -64,61 +64,13 @@
         <label>Attach Supporting PDF <span>(PDF only, max 4 MB, optional)</span><input name="attachment2" type="file" accept="application/pdf,.pdf"></label>
         <label>Attach Supporting PDF <span>(PDF only, max 4 MB, optional)</span><input name="attachment3" type="file" accept="application/pdf,.pdf"></label>
       </div>
-      <label class="agree"><input type="checkbox" required><span>I confirm that the information provided above is true and accurate.</span></label>
+      <label class="agree"><input type="checkbox" required><span>I confirm that the information provided above is true and Iam Ready To pay Amount Of ₹2999 as a One time Registration fee</span></label>
       <button class="primary-btn submit-btn" id="submitBtn" type="submit">Submit Application <span>→</span></button>
       <p class="form-note" id="formMessage" role="status">Please review your details before submitting.</p>
     </form>
   </section>
 
-  <section class="payment-section reveal" id="payment">
-    <div class="payment-top-grid">
-      <div class="payment-copy">
-        <span class="eyebrow blue">PAYMENT</span>
-        <h2>Registration Fee ₹2,999</h2>
-        <p>Tap any button below to open your UPI app, or scan the QR code to pay ₹2,999.</p>
-        <div class="upi-apps" aria-label="Supported UPI apps">
-          <a class="upi-app-badge upi-pay-btn" data-app="phonepe" href="upi://pay?pa=gthilaknadh077-7@okicici&pn=RAJASHEELA%20FOUNDATION&cu=INR" aria-label="Open PhonePe to pay ₹2,999">
-            <img src="phonepe.png" alt="PhonePe">
-            <span>PhonePe</span>
-          </a>
-          <a class="upi-app-badge upi-pay-btn" data-app="gpay" href="upi://pay?pa=gthilaknadh077-7@okicici&pn=RAJASHEELA%20FOUNDATION&cu=INR" aria-label="Open Google Pay to pay ₹2,999">
-            <img src="gpay.png" alt="GPay">
-            <span>GPay</span>
-          </a>
-          <a class="upi-app-badge upi-other upi-pay-btn" data-app="upi" href="upi://pay?pa=gthilaknadh077-7@okicici&pn=RAJASHEELA%20FOUNDATION&cu=INR" aria-label="Pay ₹2,999 using any UPI App">
-            <span class="upi-symbol">UPI</span>
-            <span>Other UPI Apps</span>
-          </a>
-        </div>
-        <div class="upi-id-box">
-          <span>UPI ID: <strong id="upiIdText">gthilaknadh077-7@okicici</strong></span>
-          <button type="button" class="copy-upi-btn" id="copyUpiBtn">Copy UPI ID</button>
-        </div>
-        <p class="upi-helper" id="upiHelper">Note: Due to NPCI rules on personal UPI links, enter <strong>₹2,999</strong> inside your UPI app or scan the QR code directly.</p>
-      </div>
-      <div class="payment-qr-placeholder">
-        <img src="sample-payment-qr.png" alt="Payment QR code">
-        <strong>Amount: ₹2,999</strong>
-        <small>Scan with PhonePe, GPay or any UPI App</small>
-      </div>
-    </div>
-
-    <div class="payment-confirm-card">
-      <h3>Confirm Your Payment</h3>
-      <p class="confirm-sub">After paying ₹2,999, enter your 12-digit UPI Transaction / UTR ID and upload your payment screenshot below.</p>
-      <form id="paymentConfirmForm">
-        <div class="confirm-grid">
-          <label>Application ID <span>*</span><input id="confirmAppId" name="applicationId" type="text" placeholder="e.g. RF2027-123456" required></label>
-          <label>Registered Phone Number <span>*</span><input id="confirmPhone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required></label>
-          <label class="full">12-Digit UPI UTR / Transaction ID <span>*</span><input name="utrNumber" type="text" inputmode="numeric" pattern="[0-9]{12}" maxlength="12" placeholder="Enter 12-digit UTR / UPI Ref No." required></label>
-          <label class="full">Upload Payment Screenshot (Optional)<input name="paymentScreenshot" type="file" accept="image/*"></label>
-        </div>
-        <button class="primary-btn confirm-submit-btn" id="confirmBtn" type="submit">Confirm ₹2,999 Payment <span>✓</span></button>
-        <p class="form-note" id="confirmMessage" role="status">Your payment details will be linked directly to your application.</p>
-      </form>
-    </div>
-  </section>
-
+  
   <section class="issued reveal"><div class="issued-line"></div><div><span class="eyebrow">ISSUED BY</span><h2>RAJASHEELA FOUNDATION</h2><p>Executive Director: <strong>G. V. THILAKNADH</strong></p><small>Reg No 552/26</small></div><img src="logo.png" alt="Foundation logo"></section>
 
 </main>
