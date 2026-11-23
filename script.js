@@ -20,6 +20,79 @@ function fileToBase64(file) {
   });
 }
 
+function downloadApplicationPDF(refId, formData) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  let y = 20;
+
+  // Header
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(16);
+  doc.text("RAJASHEELA FOUNDATION", 105, y, { align: "center" });
+  y += 7;
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text("Reg No: 552/26 | Registration Application Receipt", 105, y, { align: "center" });
+  y += 10;
+  doc.line(15, y, 195, y);
+  y += 10;
+
+  // Application ID & Date
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text(`Application ID: ${refId}`, 15, y);
+  doc.setFont("helvetica", "normal");
+  doc.text(`Date: ${new Date().toLocaleDateString("en-IN")}`, 195, y, { align: "right" });
+  y += 12;
+
+  // Submitted Fields
+  const fields = [
+    ["Full Name", formData.get("fullName")],
+    ["Father's Name", formData.get("fatherName")],
+    ["Phone Number", formData.get("phone")],
+    ["Email", formData.get("email")],
+    ["Age", formData.get("age")],
+    ["Occupation", formData.get("occupation")],
+    ["Social Service Activities", formData.get("service")],
+    ["Previous Achievements", formData.get("achievements") || "N/A"],
+    ["Full Address", formData.get("address")],
+    ["Registration Fee", "Rs. 2,999 (One-time)"]
+  ];
+
+  fields.forEach(([label, value]) => {
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10);
+    doc.text(`${label}:`, 15, y);
+
+    doc.setFont("helvetica", "normal");
+    const wrappedText = doc.splitTextToSize(String(value || "-"), 125);
+    doc.text(wrappedText, 68, y);
+    y += wrappedText.length * 6 + 3;
+
+    if (y > 255) {
+      doc.addPage();
+      y = 20;
+    }
+  });
+
+  // Payment & Contact Footer Box
+  y += 6;
+  doc.line(15, y, 195, y);
+  y += 8;
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text("Contact for Complete Your Payment of Rs. 2999", 15, y);
+  y += 7;
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text("Phone: 9959711525, 9010661852", 15, y);
+  y += 6;
+  doc.text("Gmail: rajasheelafoundation@gmail.com", 15, y);
+
+  // Download file named with their Application ID
+  doc.save(`${refId}_Rajasheela_Application.pdf`);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Navigation Toggle
   const menuToggle = document.querySelector('.menu-toggle');
@@ -210,11 +283,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (confirmPhone) confirmPhone.value = phoneVal;
 
         if (formMessage) {
-          formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Your Application ID is <strong>${refId}</strong>. Contact for Complete Your Payment of ₹2999
-Phone. 9959711525,9010661852
-Gmail.rajasheelafoundation@gmail.com `;
+          formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Your Application ID is <strong>${refId}</strong><br><br>Contact for Complete Your Payment of ₹2999<br><br>Phone. 9959711525,9010661852<br>Gmail . rajasheelafoundation@gmail.com`;
           formMessage.style.color = '#15803d';
         }
+
+        // Download PDF with all submitted registration details
+        downloadApplicationPDF(refId, data);
+
         candidateForm.reset();
         document.getElementById('payment')?.scrollIntoView({ behavior: 'smooth' });
       } catch (err) {
