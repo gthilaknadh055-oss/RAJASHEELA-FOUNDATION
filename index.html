@@ -74,22 +74,26 @@
     <div class="payment-copy">
       <span class="eyebrow blue">PAYMENT</span>
       <h2>Payment <em>₹2,999</em></h2>
-      <p>Tap PhonePe, GPay, or any UPI app below to pay directly, or scan the QR code.</p>
+      <p>Tap any button below to open your UPI app, or scan the QR code to pay ₹2,999.</p>
       <div class="upi-apps" aria-label="Supported UPI apps">
-        <a class="upi-app-badge upi-pay-btn" data-app="phonepe" href="phonepe://pay?pa=9959711525@ybl&pn=RAJASHEELA%20FOUNDATION&am=2999&cu=INR&tn=Awards%202027%20Registration" aria-label="Pay ₹2,999 using PhonePe">
+        <a class="upi-app-badge upi-pay-btn" data-app="phonepe" href="upi://pay?pa=gthilaknadh077-7@okicici&pn=RAJASHEELA%20FOUNDATION&cu=INR" aria-label="Open PhonePe to pay ₹2,999">
           <img src="phonepe.png" alt="PhonePe">
           <span>PhonePe</span>
         </a>
-        <a class="upi-app-badge upi-pay-btn" data-app="gpay" href="tez://upi/pay?pa=9959711525@ybl&pn=RAJASHEELA%20FOUNDATION&am=2999&cu=INR&tn=Awards%202027%20Registration" aria-label="Pay ₹2,999 using Google Pay">
+        <a class="upi-app-badge upi-pay-btn" data-app="gpay" href="upi://pay?pa=gthilaknadh077-7@okicici&pn=RAJASHEELA%20FOUNDATION&cu=INR" aria-label="Open Google Pay to pay ₹2,999">
           <img src="gpay.png" alt="GPay">
           <span>GPay</span>
         </a>
-        <a class="upi-app-badge upi-other upi-pay-btn" data-app="upi" href="upi://pay?pa=9959711525@ybl&pn=RAJASHEELA%20FOUNDATION&am=2999&cu=INR&tn=Awards%202027%20Registration" aria-label="Pay ₹2,999 using any UPI App">
+        <a class="upi-app-badge upi-other upi-pay-btn" data-app="upi" href="upi://pay?pa=gthilaknadh077-7@okicici&pn=RAJASHEELA%20FOUNDATION&cu=INR" aria-label="Pay ₹2,999 using any UPI App">
           <span class="upi-symbol">UPI</span>
           <span>Other UPI Apps</span>
         </a>
       </div>
-      <p class="upi-helper" id="upiHelper">UPI ID: <strong>9959711525@ybl</strong> • Amount: <strong>₹2,999</strong></p>
+      <div class="upi-id-box">
+        <span>UPI ID: <strong id="upiIdText">gthilaknadh077-7@okicici</strong></span>
+        <button type="button" class="copy-upi-btn" id="copyUpiBtn">Copy UPI ID</button>
+      </div>
+      <p class="upi-helper" id="upiHelper">Note: Due to NPCI rules on personal UPI links, enter <strong>₹2,999</strong> inside your UPI app or scan the QR code directly.</p>
     </div>
     <div class="payment-qr-placeholder">
       <img src="sample-payment-qr.png" alt="Payment QR code">
@@ -101,6 +105,6 @@
   <section class="issued reveal"><div class="issued-line"></div><div><span class="eyebrow">ISSUED BY</span><h2>RAJASHEELA FOUNDATION</h2><p>Executive Director: <strong>G. V. THILAKNADH</strong></p><small>Reg No 552/26</small></div><img src="logo.png" alt="Foundation logo"></section>
 
 </main>
-<footer><div class="footer-brand"><img src="logo.png" alt=""><strong>RAJASHEELA FOUNDATION</strong></div><span>Reg No 552/26</span><span>© 2026 RAJASHEELA FOUNDATION. All rights reserved.</span><div class="footer-contact"><strong>Contact Us</strong> · <a href="tel:9959711525">9959711525</a> · <a href="tel:9010661852">9010661852</a> · <a href="mailto:rajasheela108@gmail.com">rajasheela108@gmail.com</a></div></footer>
+<footer><div class="footer-brand"><img src="logo.png" alt=""><strong>RAJASHEELA FOUNDATION</strong></div><span>Reg No 552/26</span><span>© 2026 RAJASHEELA FOUNDATION. All rights reserved.</span><div class="footer-contact"><strong>Contact Us</strong> · <a href="tel:9959711525">9959711525</a> · <a href="tel:9010661852">9010661852</a> · <a href="mailto:Rajasheelafoundation@gmail.com">Rajasheelafoundation@gmail.com</a></div></footer>
 <script src="script.js"></script>
 </body></html>

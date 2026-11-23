@@ -1,6 +1,6 @@
 // RAJASHEELA FOUNDATION (Reg No 552/26) - Interactive Scripts (script.js)
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAQe5Z9Xnia02XjJ0nrzA22jKIXfKtLRXksxTdIawkql4l1QwV5K66XKIEyXjOBVEf/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzA63zlo9Kt0tsUF8WS_Wed3sqqguuOT0zJAUWpz-T81zDIYofLtfTM1s6G-NLeuw/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Navigation Toggle
@@ -51,43 +51,50 @@ document.addEventListener('DOMContentLoaded', () => {
     showAll();
   }
 
-  // 3. UPI App Deep-Linking with Fallback (PhonePe, GPay, Other UPI Apps)
-  const UPI_ID = '9959711525@ybl';
+  // 3. NPCI-Safe UPI Intent Deep-Linking
+  const UPI_ID = 'gthilaknadh077-7@okicici';
   const PAYEE_NAME = 'RAJASHEELA FOUNDATION';
-  const AMOUNT = '2999';
-  const NOTE = 'Awards 2027 Registration';
+  const isAndroid = /Android/i.test(navigator.userAgent);
 
-  const upiParams = `pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${AMOUNT}&cu=INR&tn=${encodeURIComponent(NOTE)}`;
-  const genericUpiUrl = `upi://pay?${upiParams}`;
+  const baseParams = `pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(PAYEE_NAME)}&cu=INR`;
+  const standardUpiUrl = `upi://pay?${baseParams}`;
 
   const upiHelper = document.getElementById('upiHelper');
   document.querySelectorAll('.upi-pay-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const app = btn.getAttribute('data-app');
-      let targetUrl = genericUpiUrl;
+      let targetUrl = standardUpiUrl;
 
-      if (app === 'phonepe') {
-        targetUrl = `phonepe://pay?${upiParams}`;
-      } else if (app === 'gpay') {
-        targetUrl = `tez://upi/pay?${upiParams}`;
+      if (isAndroid && app === 'phonepe') {
+        targetUrl = `intent://pay?${baseParams}#Intent;scheme=upi;package=com.phonepe.app;end`;
+      } else if (isAndroid && app === 'gpay') {
+        targetUrl = `intent://pay?${baseParams}#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end`;
       }
 
       if (upiHelper) {
-        upiHelper.innerHTML = `Opening <strong>${app === 'phonepe' ? 'PhonePe' : app === 'gpay' ? 'GPay' : 'UPI App'}</strong> for <strong>₹${AMOUNT}</strong>... If it does not open automatically, scan the QR code or pay to <strong>${UPI_ID}</strong>.`;
+        upiHelper.innerHTML = `Opening UPI app... Please enter <strong>₹2,999</strong> and complete payment to <strong>${UPI_ID}</strong>.`;
       }
 
       window.location.href = targetUrl;
-
-      if (app === 'phonepe' || app === 'gpay') {
-        setTimeout(() => {
-          if (!document.hidden) {
-            window.location.href = genericUpiUrl;
-          }
-        }, 1200);
-      }
     });
   });
+
+  // Copy UPI ID button
+  const copyUpiBtn = document.getElementById('copyUpiBtn');
+  if (copyUpiBtn) {
+    copyUpiBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(UPI_ID);
+        copyUpiBtn.textContent = 'Copied!';
+        setTimeout(() => { copyUpiBtn.textContent = 'Copy UPI ID'; }, 2000);
+      } catch (err) {
+        if (upiHelper) {
+          upiHelper.innerHTML = `UPI ID: <strong>${UPI_ID}</strong> (long-press to copy)`;
+        }
+      }
+    });
+  }
 
   // 4. Candidate Registration Form -> Google Sheets Submission
   const candidateForm = document.getElementById('candidateForm');
@@ -120,10 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Submitting to Google Sheets...';
+        submitBtn.innerHTML = 'Submitting...';
       }
       if (formMessage) {
-        formMessage.textContent = 'Saving your application, please wait...';
+        formMessage.textContent = 'Saving your application to Google Sheets...';
         formMessage.style.color = '#0B1F3A';
       }
 
@@ -131,11 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
-          body: payload
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+          },
+          body: payload.toString()
         });
 
         if (formMessage) {
-          formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Your Application ID is <strong>${refId}</strong>. Please complete the ₹2,999 payment below.`;
+          formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Application ID: <strong>${refId}</strong>. Please complete the ₹2,999 payment below.`;
           formMessage.style.color = '#15803d';
         }
         candidateForm.reset();
