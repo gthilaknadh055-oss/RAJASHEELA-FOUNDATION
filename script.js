@@ -1,6 +1,6 @@
 // RAJASHEELA FOUNDATION (Reg No 552/26) - Interactive Scripts (script.js)
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzA63zlo9Kt0tsUF8WS_Wed3sqqguuOT0zJAUWpz-T81zDIYofLtfTM1s6G-NLeuw/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7tapDijKXcNvIHapg32e37us_kChSGCxpKUxxME0UY6JlAhqGNehW3FJtV2rxgHrP/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Navigation Toggle
