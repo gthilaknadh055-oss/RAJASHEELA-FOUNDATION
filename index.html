@@ -74,21 +74,22 @@
     <div class="payment-copy">
       <span class="eyebrow blue">PAYMENT</span>
       <h2>Payment <em>₹2,999</em></h2>
-      <p>Scan the QR code or pay using PhonePe, GPay, or any other UPI app.</p>
+      <p>Tap PhonePe, GPay, or any UPI app below to pay directly, or scan the QR code.</p>
       <div class="upi-apps" aria-label="Supported UPI apps">
-        <div class="upi-app-badge">
-          <img src="8428.png" alt="PhonePe">
+        <a class="upi-app-badge upi-pay-btn" data-app="phonepe" href="phonepe://pay?pa=9959711525@ybl&pn=RAJASHEELA%20FOUNDATION&am=2999&cu=INR&tn=Awards%202027%20Registration" aria-label="Pay ₹2,999 using PhonePe">
+          <img src="phonepe.png" alt="PhonePe">
           <span>PhonePe</span>
-        </div>
-        <div class="upi-app-badge">
-          <img src="8427.png" alt="GPay">
+        </a>
+        <a class="upi-app-badge upi-pay-btn" data-app="gpay" href="tez://upi/pay?pa=9959711525@ybl&pn=RAJASHEELA%20FOUNDATION&am=2999&cu=INR&tn=Awards%202027%20Registration" aria-label="Pay ₹2,999 using Google Pay">
+          <img src="gpay.png" alt="GPay">
           <span>GPay</span>
-        </div>
-        <div class="upi-app-badge upi-other">
+        </a>
+        <a class="upi-app-badge upi-other upi-pay-btn" data-app="upi" href="upi://pay?pa=9959711525@ybl&pn=RAJASHEELA%20FOUNDATION&am=2999&cu=INR&tn=Awards%202027%20Registration" aria-label="Pay ₹2,999 using any UPI App">
           <span class="upi-symbol">UPI</span>
           <span>Other UPI Apps</span>
-        </div>
+        </a>
       </div>
+      <p class="upi-helper" id="upiHelper">UPI ID: <strong>9959711525@ybl</strong> • Amount: <strong>₹2,999</strong></p>
     </div>
     <div class="payment-qr-placeholder">
       <img src="sample-payment-qr.png" alt="Payment QR code">

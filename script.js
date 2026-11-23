@@ -44,13 +44,52 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     revealElements.forEach((el) => revealObserver.observe(el));
-    // Safety fallback so content never stays hidden on tall mobile viewports
     setTimeout(showAll, 1200);
   } else {
     showAll();
   }
 
-  // 3. Candidate Registration Form Handler (#candidateForm)
+  // 3. UPI App Deep-Linking with Fallback (PhonePe, GPay, Other UPI Apps)
+  // Update UPI_ID below if your foundation uses a different UPI ID
+  const UPI_ID = '9959711525@ybl';
+  const PAYEE_NAME = 'RAJASHEELA FOUNDATION';
+  const AMOUNT = '2999';
+  const NOTE = 'Awards 2027 Registration';
+
+  const upiParams = `pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(PAYEE_NAME)}&am=${AMOUNT}&cu=INR&tn=${encodeURIComponent(NOTE)}`;
+  const genericUpiUrl = `upi://pay?${upiParams}`;
+
+  const upiHelper = document.getElementById('upiHelper');
+  document.querySelectorAll('.upi-pay-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const app = btn.getAttribute('data-app');
+      let targetUrl = genericUpiUrl;
+
+      if (app === 'phonepe') {
+        targetUrl = `phonepe://pay?${upiParams}`;
+      } else if (app === 'gpay') {
+        targetUrl = `tez://upi/pay?${upiParams}`;
+      }
+
+      if (upiHelper) {
+        upiHelper.innerHTML = `Opening <strong>${app === 'phonepe' ? 'PhonePe' : app === 'gpay' ? 'GPay' : 'UPI App'}</strong> for <strong>₹${AMOUNT}</strong>... If it does not open automatically, scan the QR code or pay to <strong>${UPI_ID}</strong>.`;
+      }
+
+      window.location.href = targetUrl;
+
+      // Fallback to standard upi:// intent if specific app scheme is not registered on device
+      if (app === 'phonepe' || app === 'gpay') {
+        setTimeout(() => {
+          if (!document.hidden) {
+            window.location.href = genericUpiUrl;
+          }
+        }, 1200);
+      }
+    });
+  });
+
+  // 4. Candidate Registration Form Handler (#candidateForm)
   const candidateForm = document.getElementById('candidateForm');
   const formMessage = document.getElementById('formMessage');
 
