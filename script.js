@@ -21,8 +21,12 @@ function fileToBase64(file) {
 }
 
 function downloadApplicationPDF(refId, formData) {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
+  const jsPDFClass = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
+  if (!jsPDFClass) {
+    console.warn('jsPDF library not loaded; falling back to printable summary.');
+    return;
+  }
+  const doc = new jsPDFClass();
   let y = 20;
 
   // Header
@@ -287,11 +291,16 @@ document.addEventListener('DOMContentLoaded', () => {
           formMessage.style.color = '#15803d';
         }
 
-        // Download PDF with all submitted registration details
-        downloadApplicationPDF(refId, data);
-
+        // Download PDF with all submitted registration details (after reset & scroll so mobile browsers don't block)
         candidateForm.reset();
         document.getElementById('payment')?.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          try {
+            downloadApplicationPDF(refId, data);
+          } catch (pdfErr) {
+            console.error('PDF download error:', pdfErr);
+          }
+        }, 250);
       } catch (err) {
         if (formMessage) {
           formMessage.innerHTML = '<strong>Submission Error:</strong> Please check your internet connection and try again.';
