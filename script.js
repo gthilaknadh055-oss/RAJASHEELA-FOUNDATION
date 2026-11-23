@@ -1,5 +1,7 @@
 // RAJASHEELA FOUNDATION (Reg No 552/26) - Interactive Scripts (script.js)
 
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyAQe5Z9Xnia02XjJ0nrzA22jKIXfKtLRXksxTdIawkql4l1QwV5K66XKIEyXjOBVEf/exec';
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Mobile Navigation Toggle
   const menuToggle = document.querySelector('.menu-toggle');
@@ -50,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 3. UPI App Deep-Linking with Fallback (PhonePe, GPay, Other UPI Apps)
-  // Update UPI_ID below if your foundation uses a different UPI ID
   const UPI_ID = '9959711525@ybl';
   const PAYEE_NAME = 'RAJASHEELA FOUNDATION';
   const AMOUNT = '2999';
@@ -78,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       window.location.href = targetUrl;
 
-      // Fallback to standard upi:// intent if specific app scheme is not registered on device
       if (app === 'phonepe' || app === 'gpay') {
         setTimeout(() => {
           if (!document.hidden) {
@@ -89,50 +89,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Candidate Registration Form Handler (#candidateForm)
+  // 4. Candidate Registration Form -> Google Sheets Submission
   const candidateForm = document.getElementById('candidateForm');
   const formMessage = document.getElementById('formMessage');
+  const submitBtn = document.getElementById('submitBtn');
 
   if (candidateForm) {
-    candidateForm.addEventListener('submit', (e) => {
+    candidateForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
       const data = new FormData(candidateForm);
       const refId = 'RF2027-' + Math.floor(100000 + Math.random() * 900000);
 
-      const fullName = data.get('fullName') || '';
-      const fatherName = data.get('fatherName') || '';
-      const phone = data.get('phone') || '';
-      const email = data.get('email') || '';
-      const age = data.get('age') || '';
-      const occupation = data.get('occupation') || '';
-      const service = data.get('service') || '';
-      const achievements = data.get('achievements') || 'N/A';
-      const address = data.get('address') || '';
+      const file1 = candidateForm.querySelector('input[name="attachment1"]')?.files[0];
+      const file2 = candidateForm.querySelector('input[name="attachment2"]')?.files[0];
 
+      const payload = new URLSearchParams();
+      payload.append('applicationId', refId);
+      payload.append('fullName', data.get('fullName') || '');
+      payload.append('fatherName', data.get('fatherName') || '');
+      payload.append('phone', data.get('phone') || '');
+      payload.append('email', data.get('email') || '');
+      payload.append('age', data.get('age') || '');
+      payload.append('occupation', data.get('occupation') || '');
+      payload.append('service', data.get('service') || '');
+      payload.append('achievements', data.get('achievements') || '');
+      payload.append('address', data.get('address') || '');
+      payload.append('pdf1Name', file1 ? file1.name : 'None');
+      payload.append('pdf2Name', file2 ? file2.name : 'None');
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Submitting to Google Sheets...';
+      }
       if (formMessage) {
-        formMessage.innerHTML = `<strong>Application Prepared (${refId}):</strong> Opening your email app to send details to <strong>rajasheela108@gmail.com</strong>. Please also complete the ₹2,999 payment below.`;
+        formMessage.textContent = 'Saving your application, please wait...';
         formMessage.style.color = '#0B1F3A';
       }
 
-      const subject = encodeURIComponent(
-        `Rajasheela Foundation Award Application - ${fullName} (${refId})`
-      );
-      const body = encodeURIComponent(
-        `RAJASHEELA FOUNDATION (Reg No 552/26) - Candidate Registration\n` +
-        `Application ID: ${refId}\n` +
-        `Full Name: ${fullName}\n` +
-        `Father's Name: ${fatherName}\n` +
-        `Phone Number: ${phone}\n` +
-        `GMail: ${email}\n` +
-        `Age: ${age}\n` +
-        `Current Occupation: ${occupation}\n` +
-        `Social Service Activities: ${service}\n` +
-        `Previous Achievements: ${achievements}\n` +
-        `Full Address: ${address}\n\n` +
-        `Note: Please attach your supporting PDF documents if selected.`
-      );
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: payload
+        });
 
-      window.location.href = `mailto:rajasheela108@gmail.com?subject=${subject}&body=${body}`;
+        if (formMessage) {
+          formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Your Application ID is <strong>${refId}</strong>. Please complete the ₹2,999 payment below.`;
+          formMessage.style.color = '#15803d';
+        }
+        candidateForm.reset();
+        document.getElementById('payment')?.scrollIntoView({ behavior: 'smooth' });
+      } catch (err) {
+        if (formMessage) {
+          formMessage.innerHTML = '<strong>Submission Error:</strong> Please check your internet connection and try again.';
+          formMessage.style.color = '#b91c1c';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Submit Application <span>→</span>';
+        }
+      }
     });
   }
 });

@@ -60,12 +60,12 @@
         <label class="full">Previous Achievements<textarea name="achievements" rows="4" placeholder="Mention awards, recognitions and achievements"></textarea></label>
         <label class="full">Full Address <span>*</span><textarea name="address" rows="3" placeholder="House number, village/town, mandal, district, state and PIN code" required></textarea></label>
       </div>
-      <label class="agree"><input type="checkbox" required><span>I confirm that the information provided above is true and accurate.</span></label>
-      <button class="primary-btn submit-btn" type="submit">Submit Application <span>→</span></button>
       <div class="attachment-grid">
-        <label>Attach Supporting PDF 1 <span>(PDF only)</span><input name="attachment1" type="file" accept="application/pdf,.pdf"></label>
-        <label>Attach Supporting PDF 2 <span>(PDF only)</span><input name="attachment2" type="file" accept="application/pdf,.pdf"></label>
+        <label>Attach Supporting PDF 1 <span>(PDF only, optional)</span><input name="attachment1" type="file" accept="application/pdf,.pdf"></label>
+        <label>Attach Supporting PDF 2 <span>(PDF only, optional)</span><input name="attachment2" type="file" accept="application/pdf,.pdf"></label>
       </div>
+      <label class="agree"><input type="checkbox" required><span>I confirm that the information provided above is true and accurate.</span></label>
+      <button class="primary-btn submit-btn" id="submitBtn" type="submit">Submit Application <span>→</span></button>
       <p class="form-note" id="formMessage" role="status">Please review your details before submitting.</p>
     </form>
   </section>
