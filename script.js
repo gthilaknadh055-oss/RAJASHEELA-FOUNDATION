@@ -20,11 +20,38 @@ function fileToBase64(file) {
   });
 }
 
-function downloadApplicationPDF(refId, formData) {
+let lastSubmittedApplication = null;
+
+function triggerPdfBlobDownload(doc, filename) {
+  try {
+    const blob = doc.output('blob');
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 5000);
+    return true;
+  } catch (e) {
+    try {
+      doc.save(filename);
+      return true;
+    } catch (e2) {
+      return false;
+    }
+  }
+}
+
+function downloadApplicationPDF(refId, details) {
   const jsPDFClass = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
   if (!jsPDFClass) {
-    console.warn('jsPDF library not loaded; falling back to printable summary.');
-    return;
+    alert('PDF library is still loading. Please check your internet connection and tap "Download Application PDF" again.');
+    return false;
   }
   const doc = new jsPDFClass();
   let y = 20;
@@ -49,17 +76,19 @@ function downloadApplicationPDF(refId, formData) {
   doc.text(`Date: ${new Date().toLocaleDateString("en-IN")}`, 195, y, { align: "right" });
   y += 12;
 
+  const getVal = (key) => (typeof details.get === 'function' ? details.get(key) : details[key]);
+
   // Submitted Fields
   const fields = [
-    ["Full Name", formData.get("fullName")],
-    ["Father's Name", formData.get("fatherName")],
-    ["Phone Number", formData.get("phone")],
-    ["Email", formData.get("email")],
-    ["Age", formData.get("age")],
-    ["Occupation", formData.get("occupation")],
-    ["Social Service Activities", formData.get("service")],
-    ["Previous Achievements", formData.get("achievements") || "N/A"],
-    ["Full Address", formData.get("address")],
+    ["Full Name", getVal("fullName")],
+    ["Father's Name", getVal("fatherName")],
+    ["Phone Number", getVal("phone")],
+    ["Email", getVal("email")],
+    ["Age", getVal("age")],
+    ["Occupation", getVal("occupation")],
+    ["Social Service Activities", getVal("service")],
+    ["Previous Achievements", getVal("achievements") || "N/A"],
+    ["Full Address", getVal("address")],
     ["Registration Fee", "Rs. 2,999 (One-time)"]
   ];
 
@@ -93,8 +122,7 @@ function downloadApplicationPDF(refId, formData) {
   y += 6;
   doc.text("Gmail: rajasheelafoundation@gmail.com", 15, y);
 
-  // Download file named with their Application ID
-  doc.save(`${refId}_Rajasheela_Application.pdf`);
+  return triggerPdfBlobDownload(doc, `${refId}_Rajasheela_Application.pdf`);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -228,6 +256,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = new FormData(candidateForm);
       const refId = 'RF2027-' + Math.floor(100000 + Math.random() * 900000);
       const phoneVal = String(data.get('phone') || '');
+      const submittedSnapshot = {
+        fullName: String(data.get('fullName') || ''),
+        fatherName: String(data.get('fatherName') || ''),
+        phone: phoneVal,
+        email: String(data.get('email') || ''),
+        age: String(data.get('age') || ''),
+        occupation: String(data.get('occupation') || ''),
+        service: String(data.get('service') || ''),
+        achievements: String(data.get('achievements') || ''),
+        address: String(data.get('address') || '')
+      };
 
       const submissionOverlay = document.getElementById('submissionOverlay');
       if (submissionOverlay) {
@@ -286,21 +325,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (confirmAppId) confirmAppId.value = refId;
         if (confirmPhone) confirmPhone.value = phoneVal;
 
+        lastSubmittedApplication = { refId, details: submittedSnapshot };
+
         if (formMessage) {
           formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Your Application ID is <strong>${refId}</strong><br><br>Contact for Complete Your Payment of ₹2999<br><br>Phone. 9959711525,9010661852<br>Gmail . rajasheelafoundation@gmail.com`;
           formMessage.style.color = '#15803d';
         }
 
-        // Download PDF with all submitted registration details (after reset & scroll so mobile browsers don't block)
+        const downloadReceiptBtn = document.getElementById('downloadReceiptBtn');
+        if (downloadReceiptBtn) {
+          downloadReceiptBtn.style.display = 'inline-flex';
+          downloadReceiptBtn.onclick = () => downloadApplicationPDF(refId, submittedSnapshot);
+        }
+
+        // Trigger immediate PDF download with all submitted registration details
+        downloadApplicationPDF(refId, submittedSnapshot);
+
         candidateForm.reset();
         document.getElementById('payment')?.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-          try {
-            downloadApplicationPDF(refId, data);
-          } catch (pdfErr) {
-            console.error('PDF download error:', pdfErr);
-          }
-        }, 250);
       } catch (err) {
         if (formMessage) {
           formMessage.innerHTML = '<strong>Submission Error:</strong> Please check your internet connection and try again.';
