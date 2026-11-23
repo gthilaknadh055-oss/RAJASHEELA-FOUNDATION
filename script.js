@@ -1,6 +1,6 @@
 // RAJASHEELA FOUNDATION (Reg No 552/26) - Interactive Scripts (script.js)
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7tapDijKXcNvIHapg32e37us_kChSGCxpKUxxME0UY6JlAhqGNehW3FJtV2rxgHrP/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyxby15IsLw-OKbHcDmwQv4QsOB7y7b9T3THirGxjBayiyfKd_jZW5D_fHkxYbJ2n3O/exec';
 
 // Helper: Convert File object to Base64 string (without data:... prefix)
 function fileToBase64(file) {
