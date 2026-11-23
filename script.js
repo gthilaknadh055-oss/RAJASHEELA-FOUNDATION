@@ -210,7 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (confirmPhone) confirmPhone.value = phoneVal;
 
         if (formMessage) {
-          formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Your Application ID is <strong>${refId}</strong>. Please complete your ₹2,999 payment and confirm UTR below.`;
+          formMessage.innerHTML = `<strong>Submitted Successfully!</strong> Your Application ID is <strong>${refId}</strong>. Contact for Complete Your Payment of ₹2999
+Phone. 9959711525,9010661852
+Gmail . rajasheelafoundation@gmail.com .`;
           formMessage.style.color = '#15803d';
         }
         candidateForm.reset();
