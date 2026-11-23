@@ -61,8 +61,9 @@
         <label class="full">Full Address <span>*</span><textarea name="address" rows="3" placeholder="House number, village/town, mandal, district, state and PIN code" required></textarea></label>
       </div>
       <div class="attachment-grid">
-        <label>Attach Supporting PDF 1 <span>(PDF only, optional)</span><input name="attachment1" type="file" accept="application/pdf,.pdf"></label>
-        <label>Attach Supporting PDF 2 <span>(PDF only, optional)</span><input name="attachment2" type="file" accept="application/pdf,.pdf"></label>
+        <label>Attach Supporting PDF <span>(PDF only, max 4 MB, optional)</span><input name="attachment1" type="file" accept="application/pdf,.pdf"></label>
+        <label>Attach Supporting PDF <span>(PDF only, max 4 MB, optional)</span><input name="attachment2" type="file" accept="application/pdf,.pdf"></label>
+        <label>Attach Supporting PDF <span>(PDF only, max 4 MB, optional)</span><input name="attachment3" type="file" accept="application/pdf,.pdf"></label>
       </div>
       <label class="agree"><input type="checkbox" required><span>I confirm that the information provided above is true and accurate.</span></label>
       <button class="primary-btn submit-btn" id="submitBtn" type="submit">Submit Application <span>→</span></button>
@@ -72,7 +73,7 @@
 
   <section class="payment-section reveal" id="payment">
     <div class="payment-copy">
-      <span class="eyebrow blue">PAYMENT</span>
+      <span class="eyebrow blue">STEP 2 • PAYMENT</span>
       <h2>Payment <em>₹2,999</em></h2>
       <p>Tap any button below to open your UPI app, or scan the QR code to pay ₹2,999.</p>
       <div class="upi-apps" aria-label="Supported UPI apps">
@@ -94,6 +95,21 @@
         <button type="button" class="copy-upi-btn" id="copyUpiBtn">Copy UPI ID</button>
       </div>
       <p class="upi-helper" id="upiHelper">Note: Due to NPCI rules on personal UPI links, enter <strong>₹2,999</strong> inside your UPI app or scan the QR code directly.</p>
+
+      <div class="payment-confirm-card">
+        <h3>Confirm Your Payment</h3>
+        <p class="confirm-sub">After paying ₹2,999, enter your 12-digit UPI Transaction / UTR ID and upload your payment screenshot below.</p>
+        <form id="paymentConfirmForm">
+          <div class="confirm-grid">
+            <label>Application ID <span>*</span><input id="confirmAppId" name="applicationId" type="text" placeholder="e.g. RF2027-123456" required></label>
+            <label>Registered Phone Number <span>*</span><input id="confirmPhone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required></label>
+            <label class="full">12-Digit UPI UTR / Transaction ID <span>*</span><input name="utrNumber" type="text" inputmode="numeric" pattern="[0-9]{12}" maxlength="12" placeholder="Enter 12-digit UTR / UPI Ref No." required></label>
+            <label class="full">Upload Payment Screenshot (Optional)<input name="paymentScreenshot" type="file" accept="image/*"></label>
+          </div>
+          <button class="primary-btn confirm-submit-btn" id="confirmBtn" type="submit">Confirm ₹2,999 Payment <span>✓</span></button>
+          <p class="form-note" id="confirmMessage" role="status">Your payment details will be linked directly to your application.</p>
+        </form>
+      </div>
     </div>
     <div class="payment-qr-placeholder">
       <img src="sample-payment-qr.png" alt="Payment QR code">
